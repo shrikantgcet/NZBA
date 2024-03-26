@@ -1,0 +1,190 @@
+<div class="bootstrap-wrapper" >
+<form [formGroup]="registerOrg" (ngSubmit)="addOrganisation()">
+       <mat-horizontal-stepper #stepper>
+        <mat-step [stepControl]="personalform">
+
+          <!-- <form [formGroup]="personalForm"> -->
+         <div formGroupName="personal">
+            <ng-template matStepLabel>Personal Information</ng-template>
+            <div class="row">
+              <div class="col-md-6">
+              <mat-form-field class="full-width">
+                <input  type="text" matInput placeholder="FirstName" formControlName="Firstname"  required >
+              </mat-form-field>
+            </div>
+            <div class="col-md-6">
+              <mat-form-field class="full-width">
+                <input  type="text" matInput placeholder="LastName" formControlName="Lastname"  required >
+              </mat-form-field>
+              </div>
+              <div class="col-md-6">
+              <mat-form-field class="full-width">
+                <input  type="text" matInput placeholder="Email" formControlName="Email"  required >
+              </mat-form-field>
+             </div>
+             <div class="col-md-6">
+              <mat-form-field class="full-width">
+                <input  type="text" matInput placeholder="Contact Number" formControlName="Phone"  required >
+              </mat-form-field>
+             </div>
+             <div class="col-md-6">
+              <mat-form-field class="full-width">
+                <input  type="password" matInput placeholder="Password" formControlName="Password"  required >
+              </mat-form-field>
+             </div>
+             <div class="col-md-6">
+              <mat-form-field class="full-width">
+                <input  type="password" matInput placeholder="Confirm Password" formControlName="Confirmpassword"  required >
+             <mat-error *ngIf="ComparePassword" >Password not matching</mat-error>
+              </mat-form-field>
+             </div>
+              </div>
+            </div>
+          <!-- </form> -->
+          <div>
+            <button class="pill-button" style="float:right;" mat-button matStepperNext type="button">Next</button>
+          </div>
+        </mat-step>
+          <mat-step [stepControl]="orgform">
+
+<div formGroupName="organisation">
+            <!-- <form *ngIf="OrganisationDTO" [formGroup]="orgForm" novalidate class="form-container mt20" (submit)="addOrganisation()"> -->
+              <ng-template matStepLabel>About Organisation</ng-template>
+        <mat-card class="full-width-table mt20" >
+            <!-- <mat-card-title class="full-width-table text-center">Add Organisation</mat-card-title> -->
+          <mat-card-content  class="mt20 ">
+            <div class="row">
+              <div class="col-md-6">
+                <mat-form-field class="full-width">
+                  <!-- <input [(ngModel)]="OrganisationDTO.orgName" type="text" matInput placeholder="Name" formControlName="orgName"  required > -->
+                  <input  type="text" matInput placeholder="Name" formControlName="orgName"  required >
+                <!--adding validation -->
+                 <!-- <mat-error *ngIf="orgForm?.get('orgName')?.hasError('required')">Orgaanisation name is required</mat-error> -->
+                </mat-form-field>
+              </div>
+              <!--Ths is Abdullah's branch-->
+              <div class="col-md-6">
+                <mat-form-field class="full-width">
+                  <!-- <input type="text" [(ngModel)]="OrganisationDTO.shortCode" name="shortCode" matInput placeholder="Short Code" required> -->
+                  <input type="text" formControlName="shortCode" name="shortCode" matInput placeholder="Short Code" required>
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <mat-form-field class="full-width">
+                    <!-- <input type="text" [(ngModel)]="OrganisationDTO.gstNumber" name="gstNumber" matInput placeholder="GST Number" required> -->
+                    <input type="text" formControlName="gstNumber" name="gstNumber" matInput placeholder="GST Number" required>
+                    </mat-form-field>
+                </div>
+                <div class="col-md-6">
+                    <mat-form-field class="full-width">
+                    <!-- <input type="text" [(ngModel)]="OrganisationDTO.addressStreet1" name="addressStreet1" matInput placeholder="Address Street 1" required> -->
+                    <input type="text" formControlName="addressStreet1" name="addressStreet1" matInput placeholder="Address Street 1" required>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <mat-form-field class="full-width">
+                <!-- <input type="text" [(ngModel)]="OrganisationDTO.addressStreet1" name="addressStreet1" matInput placeholder="Address Street 1" required> -->
+                <input type="text" formControlName="addressStreet2" name="addressStreet2" matInput placeholder="Address Street 2" required>
+                </mat-form-field>
+            </div>
+                <div class="col-md-6">
+                <mat-form-field class="full-width">
+                    <!-- <input type="text" [(ngModel)]="OrganisationDTO.addressCityTown" name="addressCityTown" matInput placeholder="City" required> -->
+                    <input type="text" formControlName="addressCityTown" name="addressCityTown" matInput placeholder="City" required>
+                </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="col-md-6">
+                <mat-form-field class="full-width">
+                    <!-- <input type="text" [(ngModel)]="OrganisationDTO.postCode" name="postCode" matInput placeholder="Post Code" required> -->
+                    <input type="text" formControlName="postCode" name="postCode" matInput placeholder="Post Code" required>
+                </mat-form-field>
+                </div>
+                <div class="col-md-6">
+                  <mat-form-field class="full-width">
+                      <!-- <input type="text" [(ngModel)]="OrganisationDTO.postCode" name="postCode" matInput placeholder="Post Code" required> -->
+                      <input type="text" formControlName="country" name="country" matInput placeholder="Country" required>
+                  </mat-form-field>
+                  </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                <mat-form-field class="full-width">
+                    <!-- <input type="text" [(ngModel)]="OrganisationDTO.phonePrefix" name="phonePrefix" matInput placeholder="PhonePrefix"> -->
+                    <input type="text" formControlName="phonePrefix" name="phonePrefix" matInput placeholder="PhonePrefix">
+                </mat-form-field>
+                </div>
+                <div class="col-md-6">
+                <mat-form-field class="full-width">
+                    <!-- <input type="text" [(ngModel)]="OrganisationDTO.phone" name="phone" matInput placeholder="Phone"> -->
+                    <input type="text" formControlName="phone" name="phone" matInput placeholder="Phone">
+                </mat-form-field>
+                </div>
+            </div>
+
+          </mat-card-content>
+          <!-- <mat-card-actions>
+            <button  mat-raised-button color="primary" type="submit" [disabled]="!orgForm.valid" >Save</button>
+            <button class="ml20" mat-raised-button color="" [routerLink]="['/organisation']">Cancel</button>
+          </mat-card-actions> -->
+        </mat-card>
+      <!-- </form> -->
+      <div>
+        <button class="pill-button" mat-button matStepperPrevious>Back</button>
+        <!-- <button mat-button (click)="stepper.reset()">Reset</button> -->
+           <button class="pill-button" style="float:right;" mat-button matStepperNext type="button">Next</button>
+      </div>
+    </div>
+    </mat-step>
+    <mat-step [stepControl]="step3">
+      <div formGroupName="st3">
+      <ng-template matStepLabel>Finalising Information</ng-template>
+      <mat-card class="full-width-table mt20">
+        <mat-card-content class="mt20">
+             <div class="row">
+              <div class="col-md-6">
+                <label class="form-label" for="file">Upload a Logo to display on Invoice (optional)</label>
+                <br>
+                <br>
+                <input type="file" #file placeholder="Choose file" (change)="uploadFile(file.files)" style="display:none;">
+                <button type="button" class="btn btn-success" (click)="file.click()">Upload File</button>
+              </div>
+              <div class="col-md-4">
+                <span class="upload" *ngIf="progress > 0">
+                  {{progress}}%
+                </span>
+                <span class="upload" *ngIf="message">
+                  {{message}}
+                </span>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label" for="charitynum">Charirities Number (optional)</label>
+                <br><br>
+                <input type="text" size="50" formControlName="charityno">
+                <br><br>
+                <label class="form-label" for="gstreg">GST Registered?</label>
+                <br>
+                <input type="radio" id="gstreg" name="gstreg" value="Yes"><label style="margin-right:10px;"
+                  for="gstreg">Yes</label>
+                <input type="radio" id="gstreg" name="gstreg" value="No"><label for="gstreg">No</label>
+              </div>
+            </div>
+
+            <div>
+              <button class="pill-button" mat-button matStepperPrevious>Previous</button>
+              <button class="pill-button" style="float:right;" mat-raised-button matStepperNext>Register</button>
+            </div>
+
+        </mat-card-content>
+      </mat-card>
+    </div>
+    </mat-step>
+      </mat-horizontal-stepper>
+    </form>
+    </div>

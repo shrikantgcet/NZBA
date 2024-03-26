@@ -1,0 +1,58 @@
+<div class="bootstrap-wrapper" >
+  
+    <form  class="form-container mt20" (submit)="addCustomer()" >
+        <mat-card class="full-width-table mt20" >
+            <mat-card-title class="full-width-table text-center">Add Customer</mat-card-title>
+         
+            
+          <mat-card-content class="mt20 ">
+            <div class="row">
+              <div class="col-md-6">
+                <mat-form-field class="full-width">
+                  <input [(ngModel)]="CustomerDTO.name" type="text" name="name" matInput placeholder="Full Name">
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <mat-form-field class="full-width">
+                  <input [(ngModel)]="CustomerDTO.email" type="email"  name="email" matInput placeholder="Email">
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <mat-form-field class="full-width">
+                  <input [(ngModel)]="CustomerDTO.phoneNumber" type="text"  name="phone" matInput placeholder="Phone">
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <mat-form-field class="full-width">
+                    <input [(ngModel)]="CustomerDTO.line1" type="text"  name="line1" matInput placeholder="Address">
+                    </mat-form-field>
+                </div>
+                <div class="col-md-6">
+                    <mat-form-field class="full-width">
+                      <input [(ngModel)]="CustomerDTO.town" type="text"  name="town" matInput placeholder="Town">
+                    </mat-form-field>
+                </div>
+                <div class="col-md-6">
+                  <mat-form-field class="full-width">
+                    <input [(ngModel)]="CustomerDTO.city" type="text"  name="city" matInput placeholder="City">
+                  </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <mat-form-field class="full-width">
+                  <input [(ngModel)]="CustomerDTO.postcode" type="text"  name="postcode" matInput placeholder="Post Code">
+                </mat-form-field>
+            </div>
+            </div>
+           
+          
+          </mat-card-content>
+          <mat-card-actions>
+            <button  mat-raised-button color="primary" type="submit">Save</button>
+            <button class="ml20" mat-raised-button color="" [routerLink]="['/organisation/'+orgId+'/customer']">Cancel</button>
+          </mat-card-actions>
+        </mat-card>
+      </form>
+    
+    </div>

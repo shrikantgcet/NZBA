@@ -1,0 +1,14 @@
+
+mat-nav-list{
+  height: 993px; 
+  background-color: rgb(101, 101, 104);
+  margin-left: -15px;
+  
+}
+.nav-link{
+    color: white;
+  }
+   
+  .nav-link:hover{
+    background-color: red;
+  }

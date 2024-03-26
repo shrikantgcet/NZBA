@@ -1,0 +1,88 @@
+<div class="bootstrap-wrapper" >
+<form *ngIf="OrganisationDTO" class="form-container mt20" [formGroup]="orgForm" novalidates  (submit)="editOrganisation()">
+    <mat-card class="full-width-table mt20">
+        <mat-card-title class="full-width-table text-center">Edit Organisation</mat-card-title>
+        <!-- <input [(ngModel)]="OrganisationDTO.id" type="text" name="id" hidden> -->
+        <input matInput formControlName="id" type="text" name="id" hidden>
+      <mat-card-content class="mt20 ">
+        <div class="row">
+          <div class="col-md-6">
+            <mat-form-field class="full-width">
+                            <!-- <input [(ngModel)]="OrganisationDTO.orgName" type="text" name="name" matInput placeholder="Name" required> -->
+                            <input  type="text" matInput placeholder="Name" formControlName="orgName"  required >
+            </mat-form-field>
+          </div>
+          <div class="col-md-6">
+            <mat-form-field class="full-width">
+              <!-- <input type="text" [(ngModel)]="OrganisationDTO.shortCode" name="shortCode" matInput placeholder="Short Code" required> -->
+              <input type="text" formControlName="shortCode" name="shortCode" matInput placeholder="Short Code" required>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <mat-form-field class="full-width">
+                <!-- <input type="text" [(ngModel)]="OrganisationDTO.gstNumber" name="gstNumber" matInput placeholder="GST Number" required> -->
+                <input type="text" formControlName="gstNumber" name="gstNumber" matInput placeholder="GST Number" required>
+                </mat-form-field>
+            </div>
+            <div class="col-md-6">
+                <mat-form-field class="full-width">
+                <!-- <input type="text" [(ngModel)]="OrganisationDTO.addressStreet1" name="addressStreet1" matInput placeholder="Address Street 1" required> -->
+                <input type="text" formControlName="addressStreet1" name="addressStreet1" matInput placeholder="Address Street 1" required>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+            <mat-form-field class="full-width">
+                <!-- <input type="text" [(ngModel)]="OrganisationDTO.addressStreet2" name="addressStreet2" matInput placeholder="Address Street 2"> -->
+                <input type="text" formControlName="addressStreet2" name="addressStreet2" matInput placeholder="Address Street 2" required>
+              </mat-form-field>
+            </div>
+            <div class="col-md-6">
+            <mat-form-field class="full-width">
+                <!-- <input type="text" [(ngModel)]="OrganisationDTO.addressCityTown" name="addressCityTown" matInput placeholder="City" required> -->
+                <input type="text" formControlName="addressCityTown" name="addressCityTown" matInput placeholder="City" required>
+            </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+            <mat-form-field class="full-width">
+                <!-- <input type="text" [(ngModel)]="OrganisationDTO.country" name="country" matInput placeholder="Country" required> -->
+                <input type="text" formControlName="country" name="country" matInput placeholder="Country" required>
+            </mat-form-field>
+            </div>
+            <div class="col-md-6">
+            <mat-form-field class="full-width">
+                <!-- <input type="text" [(ngModel)]="OrganisationDTO.postCode" name="postCode" matInput placeholder="Post Code" required> -->
+                <input type="text" formControlName="postCode" name="postCode" matInput placeholder="Post Code" required>
+            </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+            <mat-form-field class="full-width">
+                <!-- <input type="text" [(ngModel)]="OrganisationDTO.phonePrefix" name="phonePrefix" matInput placeholder="PhonePrefix" required> -->
+                <input type="text" formControlName="phonePrefix" name="phonePrefix" matInput placeholder="PhonePrefix">
+            </mat-form-field>
+            </div>
+            <div class="col-md-6">
+            <mat-form-field class="full-width">
+                <!-- <input type="text" [(ngModel)]="OrganisationDTO.phone" name="phone" matInput placeholder="Phone" required> -->
+                <input type="text" formControlName="phone" name="phone" matInput placeholder="Phone">
+            </mat-form-field>
+            </div>
+        </div>
+
+      </mat-card-content>
+      <mat-card-actions >
+        <button  mat-raised-button color="primary" type="submit" [disabled]="!orgForm.valid" >Save</button>
+        <button class="ml20" mat-raised-button color="" [routerLink]="['/organisation']">Cancel</button>
+      </mat-card-actions>
+
+    </mat-card>
+  </form>
+
+</div>

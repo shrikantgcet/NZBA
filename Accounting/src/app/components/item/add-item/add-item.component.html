@@ -1,0 +1,46 @@
+<div class="bootstrap-wrapper" >
+
+    <form  class="form-container mt20" novalidate [formGroup]="addItemForm" (submit)="addItem()" >
+        <mat-card class="full-width-table mt20" >
+            <mat-card-title class="full-width-table text-center">Add Item</mat-card-title>
+
+
+          <mat-card-content class="mt20 ">
+            <div class="row">
+              <div class="col-md-6">
+                <mat-form-field class="full-width">
+                  <!-- <input [(ngModel)]="ItemDTO.name" type="text" name="name" matInput placeholder="Name"> -->
+                  <input  type="text" matInput placeholder="Item Name" formControlName="name"  required >
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <mat-form-field class="full-width">
+                  <!-- <input [(ngModel)]="ItemDTO.amount" type="text"  name="amount" matInput placeholder="Amount"> -->
+                <input type="text" matInput formControlName="amount" placeholder="Amount" required>
+              </mat-form-field>
+              </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <mat-form-field class="full-width">
+                    <!-- <input [(ngModel)]="ItemDTO.description" type="text"  name="description" matInput placeholder="Description"> -->
+                  <input type="text" formControlName="description" matInput placeholder="Description" required>
+                  </mat-form-field>
+                </div>
+                <div class="col-md-6">
+                    <mat-form-field class="full-width">
+                    <input  type="text" matInput  formControlName="itemcode" matInput placeholder="Item Code" required>
+                    </mat-form-field>
+                </div>
+            </div>
+
+
+          </mat-card-content>
+          <mat-card-actions>
+            <button  mat-raised-button color="primary" type="submit" [disabled]="!addItemForm.valid">Save</button>
+            <button class="ml20" mat-raised-button color="" [routerLink]="['/organisation/'+orgId+'/item']">Cancel</button>
+          </mat-card-actions>
+        </mat-card>
+      </form>
+
+    </div>

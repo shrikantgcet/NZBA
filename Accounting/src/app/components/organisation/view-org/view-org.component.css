@@ -1,0 +1,21 @@
+table {
+    width: 100%;
+  }
+  
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+
+
+.container{
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+
+.bootstrap-wrapper{
+  width: 70%;
+  margin: auto;
+}

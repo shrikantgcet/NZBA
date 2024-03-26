@@ -1,0 +1,21 @@
+.bootstrap-wrapper{
+  width: 70%;
+  margin: auto;
+}
+.pill-button{
+  background-color: firebrick;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 20px;
+  cursor:pointer;
+  display: inline-block;
+  padding: 0px;
+  margin: 4px 2px;
+  width: 100px;
+}
+.pill-button:hover{
+    color:dimgray;
+    border: 1px solid firebrick;
+    background-color:lightgray;
+}

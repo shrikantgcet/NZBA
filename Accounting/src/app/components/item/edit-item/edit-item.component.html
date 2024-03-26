@@ -1,0 +1,43 @@
+<div class="bootstrap-wrapper" >
+
+    <form  class="form-container mt20" novalidate [formGroup]="editItemForm" (submit)="editItem()">
+        <mat-card class="full-width-table mt20" >
+            <mat-card-title class="full-width-table text-center">Edit Item</mat-card-title>
+
+
+          <mat-card-content class="mt20 ">
+            <div class="row">
+              <div class="col-md-6">
+                <mat-form-field class="full-width">
+                  <input  type="text" formControlName="name" matInput placeholder="Name" required>
+                </mat-form-field>
+              </div>
+              <div class="col-md-6">
+                <mat-form-field class="full-width">
+                  <input  type="text"  formControlName="amount" matInput placeholder="Amount" required>
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <mat-form-field class="full-width">
+                    <input  type="text"  formControlName="description" matInput placeholder="Description" required>
+                    </mat-form-field>
+                </div>
+                <div class="col-md-6">
+                    <mat-form-field class="full-width">
+                    <input  type="text" formControlName="itemcode" matInput placeholder="Item Code" required>
+                    </mat-form-field>
+                </div>
+            </div>
+
+
+          </mat-card-content>
+          <mat-card-actions>
+            <button  mat-raised-button color="primary" type="submit"  [disabled]="!editItemForm.valid">Save</button>
+            <button class="ml20" mat-raised-button color="" [routerLink]="['/organisation/'+orgId+'/item']">Cancel</button>
+          </mat-card-actions>
+        </mat-card>
+      </form>
+
+    </div>

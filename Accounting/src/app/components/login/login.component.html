@@ -1,0 +1,107 @@
+ <div class="card">
+  <div class="card-body">
+      <h1 class="card-title">Login</h1>
+
+      <div *ngIf="[showError]" class="alert alert-danger" role="alert">
+        {{errorMessage}}
+    </div>
+
+      <form [formGroup]="loginForm" autocomplete="off" novalidate (ngSubmit)="loginUser(loginForm.value)">
+          <div class="mb-3 row">
+              <label for="username" class="col-form-label col-sm-2">Username:</label>
+              <div class="col-md-5">
+                  <input type="text" id="username" formControlName="username" class="form-control" />
+              </div>
+              <div class="col-md-5">
+                  <em *ngIf="validateControl('username') && hasError('username', 'required')">Username is required</em>
+              </div>
+          </div>
+          <div class="mb-3 row">
+              <label for="password" class="col-form-label col-sm-2">Password:</label>
+              <div class="col-md-5">
+                  <input type="password" id="password" formControlName="password" class="form-control" />
+              </div>
+              <div class="col-md-5">
+                  <em *ngIf="validateControl('password') && hasError('password', 'required')">Password is required</em>
+              </div>
+          </div>
+          <br>
+          <div class="mb-3 row">
+              <div class="col-md-1">
+                  <button type="submit" class="btn btn-info" [disabled]="!loginForm.valid">Login</button>
+              </div>
+          </div>
+      </form>
+  </div>
+</div>
+
+<!-- <div>
+  <form class="form-signin" #loginForm="ngForm" (ngSubmit)="login(loginForm)"
+    style="float:left; width:30vw; margin-left: 4%;">
+    <div *ngIf="showError" class="alert alert-danger" role="alert">
+      {{errorMessage}}
+  </div>
+
+    <form [formGroup]="loginForm" autocomplete="off" novalidate (ngSubmit)="loginUser(loginForm.value)" style="float:left; width:30vw; margin-left: 4%;">
+    <div class="container-fluid">
+      <br /><br /><br />
+      <h1 style="font-family:Arial, Helvetica, sans-serif"><strong>Login to Your Account!</strong></h1>
+     <div *ngIf="invalidLogin" class="alert alert-danger">Invalid username or password.</div>
+      <br />
+      <label for="username">Email address</label>
+      <br /><p></p>
+      <input class="input-login" type="email" id="username" name="username" ngModel placeholder=" Enter User Name"
+        required>
+        <em *ngIf="validateControl('username') && hasError('username', 'required')">Username is required</em>
+        <br />
+      <br />
+      <label for="password">Password</label>
+      <br />
+      <input class="input-login" [type]="hide ? 'password' : 'text'" id="password" name="password" ngModel
+        placeholder="Enter Password" required >
+        <em *ngIf="validateControl('password') && hasError('password', 'required')">Password is required</em>
+        <button style=" margin-left:-30px; color:darkgrey; cursor: pointer;" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="!hide">
+        <mat-icon style="font-size: 1.2em; margin-bottom: 2px;">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+      <br>
+      <label for="remember" name="remember" style="float:left; font-size: small;">
+        <input type="checkbox" id="remember" name="remember" style="font-size:small ;"/> Remember Me
+      <label style=" margin-left:90px; font-size: small; "><a style="color:black;text-decoration:none;" routerLink="/forgot-password"> Forgot Password</a></label></label>
+      <br/>
+      <br />
+      <br/>
+      <div>
+        <button class="pill-button" mat-button type="submit">Login</button>
+      </div>
+      <br/>
+      <label> Do not have an account ? <a href="/register-organisation" style="text-decoration:none; color:firebrick;"><strong> Sign up</strong></a></label>
+    </div>
+  </form>
+
+  <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig"
+    style="float:right; width:50vw; margin: 2px;">
+    <div ngxSlickItem *ngFor="let image of image" class="slide">
+      <img src="{{ image.img}}" width="100%">
+    </div>
+  </ngx-slick-carousel>
+</div> -->
+<!--
+<p>login works!</p>
+<form #loginForm="ngForm" novalidate class="form-container mt20" (submit)="login(loginForm)">
+<div class="col-md-6">
+  <mat-form-field class="full-width">
+    <input  type="text" matInput placeholder="Email" formControlName="Email"  required >
+  </mat-form-field>
+ </div>
+
+ <div class="col-md-6">
+  <mat-form-field class="full-width">
+    <input  type="password" matInput placeholder="Password" formControlName="Password"  required >
+  </mat-form-field>
+ </div>
+ <mat-card-actions>
+  <button  mat-raised-button color="primary" type="submit" >Save</button>
+  <button class="ml20" mat-raised-button color="" [routerLink]="['/organisation']">Cancel</button>
+</mat-card-actions>
+</form> -->
