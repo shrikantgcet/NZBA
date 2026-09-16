@@ -1,0 +1,30 @@
+# Node / Angular
+node_modules/
+frontend/.angular/
+frontend/dist/
+frontend/.vite/
+frontend/temp/
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+frontend/.env*
+
+# .NET
+api/bin/
+api/obj/
+api/*.user
+api/*.suo
+api/.vs/
+
+# OS / editors
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.vscode/*
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/tasks.json
+
+# Misc
+.tmp-az/
